@@ -1,0 +1,16 @@
+cd "/u/Ingenieria informática/1º cuatri/Fundamentos de Programación I/Proyecto_programacion"
+git pull                      # trae cambios si trabajas desde otro PC
+# ... editas y compilas en Visual Studio o VS Code ...
+git add .
+git status                    # revisa qué vas a subir
+git commit -m "descripcion del cambio"
+git push
+
+Reglas que evitan problemas
+Un solo .git, en la raíz. No crees repos dentro de repos (como pasó con fundamentos-de-programacion/). Antes de git init, comprueba con git status que no estás ya dentro de uno.
+Nunca hagas git init en tu carpeta de usuario (C:\Users\Alvaro) ni en una unidad entera.
+Sube código fuente, no resultados de compilar. Eso es lo que hace el .gitignore que ya tienes: excluye .vs/, x64/, .exe, .obj, etc.
+Nombres sin espacios ni acentos en las carpetas y archivos de código (tema2_operadores, no Tema 2 Operadores). Evita problemas con compiladores y terminales. Tu ruta de U: tiene espacios y acentos y funciona, pero obliga a usar comillas siempre.
+Commits pequeños y frecuentes, con mensajes que digan qué hiciste: git commit -m "añade ejercicios de operadores logicos".
+
+Una regla simple funciona bien: un repositorio por proyecto o asignatura, con una subcarpeta por cada ejercicio o programa, y el .gitignore en la raíz para que los archivos generados no entren
