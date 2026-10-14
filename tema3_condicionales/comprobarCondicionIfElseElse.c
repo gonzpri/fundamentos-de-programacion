@@ -1,7 +1,7 @@
 #include <stdio.h>
 
     int main() {
-        int entero = 100;
+        int entero = 98;
 
         if (entero == 99) {
             printf("Es 99");
