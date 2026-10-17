@@ -14,12 +14,20 @@ int main() {
     int m2[R][M];
     int solucion [N][M];
 
-    /*Leer matrices */
-    printf("Introduzca m1:\n");
-    for (i=0; i<N; i++){
-        for (j=0; j<R; j++){
-                scanf("%d", &m1[i][j]);
+    /*Poner matriz solucion a 0*/
+    for(i=0; i<N; i++) {
+        for (j=0; j<M; j++){
+            solucion[i][j] = 0;
         }
+    }
+
+    /*Introducir matriz 1 */
+    printf("Introduzca m1:\n");
+        for (i=0; i<N; i++){
+            for (j=0; j<R; j++){
+                    scanf("%d", &m1[i][j]);
+        }
+    printf("\n");
     }
     /*Introduzca la matriz 2*/
     printf("Introduzca m2:\n");
@@ -27,6 +35,7 @@ int main() {
             for (j=0; j<M; j++){
                     scanf("%d", &m2[i][j]);
             }
+        printf("\n");
     }
 
     /*Realizar multiplicación*/
@@ -43,7 +52,7 @@ int main() {
     for(i=0; i<N; i++) {
         for (j=0; j<M; j++){
             printf("%d ", solucion[i][j]);
-            printf("\n");
         }
+    printf("\n");
     }
 }
