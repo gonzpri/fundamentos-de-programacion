@@ -14,7 +14,7 @@ int main() {
         for(i=0;i<N;i++){
             scanf("%d", &v[i]);
         }
-    //Recoger array 1
+    //Recoger array 2
         printf("Escribe el array v[M=%d]: ", M);
         for(i=0;i<M;i++){
             scanf("%d", &w[i]);
