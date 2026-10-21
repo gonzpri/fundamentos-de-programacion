@@ -22,7 +22,7 @@ int main() {
 
     j=0;
     for (i=0;i<N;i++){
-        if (v[i] == w[j]){
+        if (j < M && v[i] == w[j]){
             j++;
         }
     }
