@@ -1,18 +1,45 @@
-/*
-Ejercicio 4. Coste de un envío
-Una empresa de transporte calcula el precio de sus envíos según su peso. El coste se establece de la siguiente forma:
-• Hasta 2 kg, incluidos: 5 euros.
-• Más de 2 kg y hasta 5 kg, incluidos: 8 euros.
-• Más de 5 kg y hasta 10 kg, incluidos: 12 euros.
-• Más de 10 kg: 18 euros.
-Escribe una función llamada calcularCosteEnvio que reciba como parámetro el peso de un envío, expresado en
-kilogramos, y devuelva el coste correspondiente.
-En el programa principal (main):
-1. Solicita el peso de 5 envíos.
-2. Utiliza la función calcularCosteEnvio para obtener el coste de cada uno.
-3. Muestra por pantalla el coste correspondiente a cada envío.
-4. Muestra el número total de envíos cuyo coste sea de 12 euros o superior.
-5. Muestra el coste total de los cinco envíos.
-Los pesos introducidos serán siempre valores positivos.
-La función deberá ser utilizada desde el programa principal para calcular el coste de cada envío.
-*/
+#include <stdio.h>
+
+#define cantEnv 5
+
+float peso;
+float precio[cantEnv];
+int contEnvCaro;
+float sumaCosteEnvios;
+
+int calcularCosteEnvio(float peso){
+        if(peso<0){
+            return 0;
+        } else if(10<=peso){
+            printf("Precio: %d.\n",18);
+            contEnvCaro++;
+            sumaCosteEnvios = sumaCosteEnvios + 18;
+        } else if(5<=peso){
+            printf("Precio: %d.\n",12);
+            contEnvCaro++;
+            sumaCosteEnvios = sumaCosteEnvios + 12;
+        } else if(2<=peso){
+            printf("Precio: %d.\n",8);
+            sumaCosteEnvios = sumaCosteEnvios + 8;
+        }else if(0<=peso){
+            printf("Precio: %d.\n",5);
+            sumaCosteEnvios = sumaCosteEnvios + 5;
+        } else{
+        return 0;
+        }
+}
+
+         
+    
+
+int main(){
+    int i;
+    printf("Introduce el peso para %d envios:\n",cantEnv);
+    for(i=0;i<cantEnv;i++){
+        scanf("%f",&peso);
+        calcularCosteEnvio(peso);
+    }
+    printf("Envios superiores a 12 EUR\n: %d.\n",contEnvCaro);
+    printf("Coste total: %.2f EUR\n",sumaCosteEnvios);
+    return 0;
+}
